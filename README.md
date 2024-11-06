@@ -10,4 +10,5 @@ COPY . .
 
 CMDS:
 
- docker run -it --rm -d -p 8080:80 --name aisite rtechtrove/webapp:v1
+1. docker build -t webapp .
+2. docker run -it --rm -d -p 8080:80 --name aisite rtechtrove/webapp:v1
