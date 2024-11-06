@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let Launch the first static Website on own using docker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        img {
+            max-width: 30%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Image Update</h1>
+    <input type="file" id="fileInput" accept="image/*">
+    <img id="imageDisplay" src="" alt="Your Image" />
+    <hr>
+    <h2>Me the AI Version</h2>
+    <h3>Successfully Created the Static Web Page</h3>
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const imageDisplay = document.getElementById('imageDisplay');
+
+        fileInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imageDisplay.src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+
+</body>
+</html>
